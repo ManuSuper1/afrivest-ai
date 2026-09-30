@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "afrivest-ai"
+version = "0.1.0"
+description = "Deep-agent research engine for AfriVest Intelligence"
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    "deepagents>=0.7.13",
+    "langchain>=1.4.0",
+    "langgraph>=1.2.0",
+    "langchain-anthropic>=1.7.0",
+    "tavily-python>=0.5.0",
+    "requests>=2.31.0",
+    "pydantic>=2.10.0",
+    "langchain-google-genai>=4.4.0",
+    "fastapi>=0.141.1",
+    "uvicorn[standard]>=0.54.0",
+    "sse-starlette>=3.5.0",
+]
+
+[project.optional-dependencies]
+postgres = ["langgraph-checkpoint-postgres>=2.0.0"]
+openai = ["langchain-openai>=1.0.0"]
+google = ["langchain-google-genai>=3.0.0"]
+dev = ["pytest>=8.0.0", "pytest-asyncio>=0.24.0", "ruff>=0.8.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/afrivest_ai"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

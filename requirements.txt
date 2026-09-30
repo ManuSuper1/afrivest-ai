@@ -1,0 +1,14 @@
+deepagents>=0.7.13
+langchain>=1.4.0
+langgraph>=1.2.0
+langchain-anthropic>=1.7.0
+tavily-python>=0.5.0
+requests>=2.31.0
+pydantic>=2.10.0
+
+# Uncomment for cross-process/production persistence:
+# langgraph-checkpoint-postgres>=2.0.0
+
+# Uncomment if you switch the orchestrator or subagent model provider:
+# langchain-openai>=1.0.0
+# langchain-google-genai>=3.0.0
